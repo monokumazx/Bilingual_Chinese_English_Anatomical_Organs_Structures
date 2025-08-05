@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人体解剖器官与结构词汇表</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .section-card {
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* More rounded corners */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            margin-bottom: 2rem;
+            padding: 2rem;
+            transition: transform 0.3s ease-in-out;
+        }
+        .section-card:hover {
+            transform: translateY(-5px); /* Slight lift on hover */
+        }
+        h1 {
+            font-size: 4rem; /* Increased font size for the main title */
+            font-weight: 700;
+            color: #0056b3; /* A noticeable deep blue color */
+            text-align: center;
+            margin-bottom: 1.5rem; /* Adjusted for description spacing */
+            line-height: 1.1; /* Tighter line height for large text */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Added subtle text shadow for pop */
+        }
+        .description {
+            text-align: center;
+            color: #555;
+            margin-bottom: 2rem; /* Adjusted spacing */
+            line-height: 1.6;
+        }
+        .description .chinese-desc {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem; /* Smaller font size for Chinese description */
+        }
+        .description .english-desc {
+            font-size: 0.85rem; /* Smaller font size for English description */
+            font-style: italic;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2d3748; /* Slightly lighter heading */
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #edf2f7; /* Subtle underline */
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #4a5568; /* Sub-section heading */
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            padding-left: 0.5rem;
+            border-left: 4px solid #4299e1; /* Blue border for sub-sections */
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 0.75rem; /* Space between rows */
+            margin-top: 1.5rem;
+        }
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #4299e1; /* Blue header */
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: 0.75rem 0.75rem 0 0; /* Rounded top corners */
+        }
+        tr:nth-child(even) {
+            background-color: #f7fafc; /* Light stripe for rows */
+        }
+        tr:not(:first-child) td {
+            background-color: #edf2f7; /* Background for data rows */
+            border-radius: 0.75rem; /* Rounded corners for data cells */
+        }
+        tr:not(:first-child):hover td {
+            background-color: #e2e8f0; /* Hover effect for data rows */
+        }
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #cbd5e0; /* Gray background for image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a5568;
+            font-size: 1.25rem;
+            border-radius: 1rem;
+            margin-bottom: 1.5rem;
+            overflow: hidden; /* Ensure image fits */
+            border: 2px dashed #94a3b8; /* Dashed border for empty slot */
+        }
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the area */
+            border-radius: 1rem;
+        }
+        .image-placeholder.empty::before {
+            content: "整体示意图 (Overall Diagram)";
+            color: #64748b;
+        }
+        /* Style for stacked terms */
+        .stacked-term {
+            display: flex;
+            flex-direction: column;
+        }
+        .stacked-term .english {
+            font-weight: 600;
+        }
+        .stacked-term .chinese {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 0.2em;
+        }
+        /* Style for stacked definitions */
+        .stacked-definition {
+            display: flex;
+            flex-direction: column;
+        }
+        .stacked-definition .chinese-definition {
+            font-weight: 400; /* Normal weight for Chinese definition */
+        }
+        .stacked-definition .english-definition {
+            font-size: 0.9em;
+            color: #666; /* Slightly darker gray for English translation */
+            margin-top: 0.2em;
+            font-style: italic; /* Italicize English translation */
+        }
+        /* Style for individual term image slot */
+        .term-image-slot {
+            margin-top: 0.5rem;
+            width: 80px; /* Fixed width for small image */
+            height: 80px; /* Fixed height for small image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e2e8f0; /* Light gray background for small image */
+            border-radius: 0.5rem;
+            overflow: hidden;
+            border: 1px dashed #a0aec0; /* Dashed border for empty slot */
+        }
+        .term-image-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+        .term-image-slot.empty::before {
+            content: "图片 (Image)";
+            color: #718096;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container">
+        <!-- Header Section -->
+        <header class="py-10">
+            <h1>
+                人体解剖器官与结构词汇表<br>
+                Vocabulary List of Human Anatomical Organs and Structures
+            </h1>
+            <div class="description">
+                <p class="chinese-desc">
+                    本词汇表收录了人体主要器官及解剖结构的中英文术语，附带拼音和详细定义，适合医学、健康科学及双语教学使用。内容涵盖神经系统、循环系统、呼吸系统、消化系统、生殖与泌尿系统及牙齿等多个人体系统，帮助学习者全面掌握人体解剖相关词汇。
+                </p>
+                <p class="english-desc">
+                    This vocabulary list compiles the key anatomical organs and structures of the human body with terms in Chinese and English, including Pinyin and detailed definitions. It is designed for use in medicine, health sciences, and bilingual education. The content covers multiple human body systems such as the nervous, circulatory, respiratory, digestive, reproductive & urinary systems, and teeth, helping learners develop a comprehensive understanding of human anatomy terminology.
+                </p>
+            </div>
+        </header>
+
+        <!-- Major Organs Section -->
+        <section id="major-organs" class="section-card">
+            <h2>🧠 主要器官 (Major Organs)</h2>
+            <div class="image-placeholder empty">
+                <!-- Image for the overall system will go here -->
+                <img src="" alt="主要器官示意图" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+            </div>
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>术语 (Term)</th>
+                            <th>拼音 (Pinyin)</th>
+                            <th>定义 (Definition)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Brain</span><span class="chinese">大脑</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Brain will go here -->
+                                    <img src="" alt="大脑 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>dà nǎo</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">中枢神经系统的主要部分，控制思维、情绪、感觉和动作。</span><span class="english-definition">The main part of the central nervous system that controls thinking, emotions, sensation, and movement.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Kidney</span><span class="chinese">肾脏</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Kidney will go here -->
+                                    <img src="" alt="肾脏 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>shèn zàng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">过滤血液、产生尿液，调节体液平衡和血压。</span><span class="english-definition">Filters blood, produces urine, regulates fluid balance and blood pressure.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Liver</span><span class="chinese">肝脏</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Liver will go here -->
+                                    <img src="" alt="肝脏 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>gān zàng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">解毒、合成蛋白质、储存能量及代谢营养。</span><span class="english-definition">Detoxifies, synthesizes proteins, stores energy, and metabolizes nutrients.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Lungs</span><span class="chinese">肺</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Lungs will go here -->
+                                    <img src="" alt="肺 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>fèi</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">进行气体交换，吸入氧气，排出二氧化碳。</span><span class="english-definition">Performs gas exchange, inhaling oxygen and exhaling carbon dioxide.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Pancreas</span><span class="chinese">胰腺</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Pancreas will go here -->
+                                    <img src="" alt="胰腺 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>yí xiàn</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">分泌胰岛素、消化酶，调节血糖。</span><span class="english-definition">Secretes insulin and digestive enzymes, regulating blood sugar.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Thyroid</span><span class="chinese">甲状腺</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Thyroid will go here -->
+                                    <img src="" alt="甲状腺 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>jiǎ zhuàng xiàn</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">产生调节新陈代谢的激素。</span><span class="english-definition">Produces hormones that regulate metabolism.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Heart</span><span class="chinese">心脏</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Heart will go here -->
+                                    <img src="" alt="心脏 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>xīn zàng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">泵血器官，推动血液循环。</span><span class="english-definition">A pumping organ that drives blood circulation.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Spleen</span><span class="chinese">脾脏</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Spleen will go here -->
+                                    <img src="" alt="脾脏 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>pí zàng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">免疫和血液过滤功能，储存白细胞和血小板。</span><span class="english-definition">Functions in immunity and blood filtration, storing white blood cells and platelets.</span></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Reproductive & Urinary Systems Section -->
+        <section id="reproductive-urinary" class="section-card">
+            <h2>🧬 生殖与泌尿系统 (Reproductive & Urinary Systems)</h2>
+            <!-- Removed the overall image-placeholder for this section -->
+            <div class="overflow-x-auto">
+                <!-- Urinary System Subsection -->
+                <h3>🧠 泌尿系统 (Urinary System)</h3>
+                <div class="image-placeholder empty">
+                    <!-- Image for Urinary System will go here -->
+                    <img src="" alt="泌尿系统示意图" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>术语 (Term)</th>
+                            <th>拼音 (Pinyin)</th>
+                            <th>定义 (Definition)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Ureter</span><span class="chinese">输尿管</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Ureter will go here -->
+                                    <img src="" alt="Ureter Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>shū niào guǎn</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">输送尿液从肾至膀胱的管道。</span><span class="english-definition">Tubes that transport urine from the kidneys to the bladder.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Bladder</span><span class="chinese">膀胱</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Bladder will go here -->
+                                    <img src="" alt="Bladder Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>páng guāng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">储存尿液的器官。</span><span class="english-definition">The organ that stores urine.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Bladder Neck</span><span class="chinese">膀胱颈</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Bladder Neck will go here -->
+                                    <img src="" alt="Bladder Neck Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>páng guāng jǐng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">膀胱与尿道之间的连接处。</span><span class="english-definition">The connection between the bladder and the urethra.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Urethra</span><span class="chinese">尿道</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Urethra will go here -->
+                                    <img src="" alt="Urethra Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>niào dào</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">排尿通道，男性也用于排精。</span><span class="english-definition">The tube that carries urine from the bladder to outside the body; also used for semen in males.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Adrenal gland</span><span class="chinese">肾上腺</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Adrenal gland will go here -->
+                                    <img src="" alt="Adrenal gland Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>shèn shàng xiàn</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">位于肾上方，分泌应激激素。</span><span class="english-definition">Located above the kidneys, secretes stress hormones.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Anus</span><span class="chinese">肛门</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Anus will go here -->
+                                    <img src="" alt="肛门 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>gāng mén</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">排泄物排出体外的通道。</span><span class="english-definition">The opening through which waste products are expelled from the body.</span></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Male Reproductive System Subsection -->
+                <h3>🚹 男性生殖系统 (Male Reproductive System)</h3>
+                <div class="image-placeholder empty">
+                    <!-- Image for Male Reproductive System will go here -->
+                    <img src="" alt="男性生殖系统示意图" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>术语 (Term)</th>
+                            <th>拼音 (Pinyin)</th>
+                            <th>定义 (Definition)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Penis</span><span class="chinese">阴茎</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Penis will go here -->
+                                    <img src="" alt="Penis Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>yīn jīng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">男性外生殖器官。</span><span class="english-definition">Male external reproductive organ.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Scrotum</span><span class="chinese">阴囊</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Scrotum will go here -->
+                                    <img src="" alt="Scrotum Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>yīn náng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">包含睾丸的皮肤囊袋。</span><span class="english-definition">A pouch of skin containing the testicles.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Testis</span><span class="chinese">睾丸</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Testis will go here -->
+                                    <img src="" alt="Testis Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>gāo wán</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">产生精子和睾酮。</span><span class="english-definition">Produces sperm and testosterone.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Seminal Vesicle</span><span class="chinese">精囊</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Seminal Vesicle will go here -->
+                                    <img src="" alt="Seminal Vesicle Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>jīng náng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">分泌精液的一部分。</span><span class="english-definition">Part of the male reproductive system that secretes fluid for semen.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Prostate</span><span class="chinese">前列腺</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Prostate will go here -->
+                                    <img src="" alt="Prostate Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>qián liè xiàn</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">男性生殖腺，产生前列腺液。</span><span class="english-definition">Male reproductive gland that produces prostatic fluid.</span></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Female Reproductive System Subsection -->
+                <h3>🚺 女性生殖系统 (Female Reproductive System)</h3>
+                <div class="image-placeholder empty">
+                    <!-- Image for Female Reproductive System will go here -->
+                    <img src="" alt="女性生殖系统示意图" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>术语 (Term)</th>
+                            <th>拼音 (Pinyin)</th>
+                            <th>定义 (Definition)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Ovary</span><span class="chinese">卵巢</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Ovary will go here -->
+                                    <img src="" alt="Ovary Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>luǎn cháo</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">产生卵子与女性激素的腺体。</span><span class="english-definition">Glands that produce eggs and female hormones.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Fallopian tubes</span><span class="chinese">输卵管</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Fallopian tubes will go here -->
+                                    <img src="" alt="Fallopian tubes Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>shū luǎn guǎn</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">输送卵子至子宫的管道。</span><span class="english-definition">Tubes that transport eggs to the uterus.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Uterus</span><span class="chinese">子宫</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Uterus will go here -->
+                                    <img src="" alt="Uterus Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>zǐ gōng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">胚胎发育的器官。</span><span class="english-definition">The organ where a fetus develops.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Cervix</span><span class="chinese">子宫颈</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Cervix will go here -->
+                                    <img src="" alt="Cervix Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>zǐ gōng jǐng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">子宫与阴道连接的部分。</span><span class="english-definition">The lower, narrow part of the uterus that forms a canal opening into the vagina.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Vagina</span><span class="chinese">阴道</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Vagina will go here -->
+                                    <img src="" alt="阴道 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>yīn dào</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">女性生殖管道，通往外阴。</span><span class="english-definition">Female reproductive canal leading to the vulva.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Areola of nipple</span><span class="chinese">乳晕</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Areola of nipple will go here -->
+                                    <img src="" alt="乳晕 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>rǔ yūn</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">乳头周围的色素沉着区域。</span><span class="english-definition">The pigmented area around the nipple.</span></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Circulatory & Respiratory Systems Section -->
+        <section id="circulatory-respiratory" class="section-card">
+            <h2>❤️ 循环与呼吸系统 (Circulatory & Respiratory Systems)</h2>
+            <div class="image-placeholder empty">
+                <!-- Image for the overall system will go here -->
+                <img src="" alt="循环与呼吸系统示意图" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+            </div>
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>术语 (Term)</th>
+                            <th>拼音 (Pinyin)</th>
+                            <th>定义 (Definition)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Artery</span><span class="chinese">动脉</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Artery will go here -->
+                                    <img src="" alt="动脉 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>dòng mài</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">将血液从心脏输送到全身的血管。</span><span class="english-definition">Blood vessel that carries blood away from the heart to the rest of the body.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Atrium</span><span class="chinese">心房</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Atrium will go here -->
+                                    <img src="" alt="心房 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>xīn fáng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">心脏上部腔室，接收血液。</span><span class="english-definition">Upper chamber of the heart that receives blood.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Blood vessel</span><span class="chinese">血管</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Blood vessel will go here -->
+                                    <img src="" alt="血管 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>xuè guǎn</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">输送血液的通道，包括动脉、静脉和毛细血管。</span><span class="english-definition">Channels that transport blood, including arteries, veins, and capillaries.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Bronchus</span><span class="chinese">支气管</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Bronchus will go here -->
+                                    <img src="" alt="支气管 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>zhī qì guǎn</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">气管的分支，引导空气进入肺部。</span><span class="english-definition">A branch of the trachea that leads air into the lungs.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Carina</span><span class="chinese">隆凸</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Carina will go here -->
+                                    <img src="" alt="隆凸 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>lóng tū</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">气管分成左右支气管的分叉点。</span><span class="english-definition">The point where the trachea divides into the left and right main bronchi.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Chest Wall</span><span class="chinese">胸壁</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Chest Wall will go here -->
+                                    <img src="" alt="胸壁 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>xiōng bì</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">包括肋骨、肌肉等结构，保护胸腔器官。</span><span class="english-definition">Includes structures like ribs and muscles, protecting the thoracic organs.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Diaphragm</span><span class="chinese">隔膜</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Diaphragm will go here -->
+                                    <img src="" alt="隔膜 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>gé mó</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">呼吸主要肌肉，分隔胸腹腔。</span><span class="english-definition">The main muscle of respiration, separating the thoracic and abdominal cavities.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Hilum</span><span class="chinese">肺门</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Hilum will go here -->
+                                    <img src="" alt="肺门 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>fèi mén</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">血管、神经等进出肺部的部位。</span><span class="english-definition">The area where blood vessels, nerves, etc., enter and exit the lungs.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Lymph nodes</span><span class="chinese">淋巴结</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Lymph nodes will go here -->
+                                    <img src="" alt="淋巴结 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>lín bā jié</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">过滤淋巴液，参与免疫反应。</span><span class="english-definition">Filter lymph fluid and participate in immune responses.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Lymph vessels</span><span class="chinese">淋巴管</span></div>
+                                <div class="term-image-slot empty">
+                                    <!-- Image for Lymph vessels will go here -->
+                                    <img src="" alt="淋巴管 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>lín bā guǎn</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">运输淋巴液的管道。</span><span class="english-definition">Vessels that transport lymph fluid.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Mediastinum</span><span class="chinese">纵膈腔</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Mediastinum will go here -->
+                                    <img src="" alt="纵膈腔 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>zòng gé qiāng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">胸腔中部区域，位于两肺之间。</span><span class="english-definition">The central compartment of the thoracic cavity, located between the two lungs.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Pericardium</span><span class="chinese">心包</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Pericardium will go here -->
+                                    <img src="" alt="心包 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>xīn bāo</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">包裹心脏的膜，保护和润滑心脏。</span><span class="english-definition">The membrane enclosing the heart, protecting and lubricating it.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Pleura</span><span class="chinese">胸膜</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Pleura will go here -->
+                                    <img src="" alt="胸膜 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>xiōng mó</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">包裹肺部并减少摩擦的双层膜。</span><span class="english-definition">A double-layered membrane enclosing the lungs and reducing friction.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Rib</span><span class="chinese">肋骨</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Rib will go here -->
+                                    <img src="" alt="肋骨 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>lèi gǔ</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">保护胸腔的重要骨骼结构。</span><span class="english-definition">Important bony structures that protect the thoracic cavity.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Trachea</span><span class="chinese">气管</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Trachea will go here -->
+                                    <img src="" alt="气管 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>qì guǎn</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">连接喉与支气管的呼吸道。</span><span class="english-definition">The airway connecting the larynx to the bronchi.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Valve</span><span class="chinese">瓣膜</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Valve will go here -->
+                                    <img src="" alt="瓣膜 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>bàn mó</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">控制血液单向流动的结构。</span><span class="english-definition">A structure that controls unidirectional blood flow.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Vein</span><span class="chinese">静脉</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Vein will go here -->
+                                    <img src="" alt="静脉 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>jìng mài</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">将血液从身体送回心脏的血管。</span><span class="english-definition">Blood vessel that carries blood back to the heart from the body.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Ventricle</span><span class="chinese">心室</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Ventricle will go here -->
+                                    <img src="" alt="心室 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>xīn shì</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">心脏下部腔室，推动血液出心脏。</span><span class="english-definition">Lower chamber of the heart that pumps blood out of the heart.</span></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Nervous & Sensory Systems Section -->
+        <section id="nervous-sensory" class="section-card">
+            <h2>🧠 神经与感官系统 (Nervous & Sensory Systems)</h2>
+            <div class="image-placeholder empty">
+                <!-- Image for the overall system will go here -->
+                <img src="" alt="神经与感官系统示意图" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+            </div>
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>术语 (Term)</th>
+                            <th>拼音 (Pinyin)</th>
+                            <th>定义 (Definition)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Cerebellum</span><span class="chinese">小脑</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Cerebellum will go here -->
+                                    <img src="" alt="小脑 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>xiǎo nǎo</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">控制协调和平衡的脑部结构。</span><span class="english-definition">Brain structure that controls coordination and balance.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Cerebrum</span><span class="chinese">大脑</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Cerebrum will go here -->
+                                    <img src="" alt="大脑 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>dà nǎo</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">大脑皮层，处理高级思维和感觉。</span><span class="english-definition">The cerebral cortex, which processes higher-level thinking and sensation.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Cornea</span><span class="chinese">眼角膜</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Cornea will go here -->
+                                    <img src="" alt="眼角膜 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>yǎn jiǎo mó</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">眼球透明前部，折射光线。</span><span class="english-definition">The transparent front part of the eyeball that refracts light.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Ear</span><span class="chinese">耳</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Ear will go here -->
+                                    <img src="" alt="耳 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>ěr</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">听觉与平衡器官。</span><span class="english-definition">Organ of hearing and balance.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Eye ball</span><span class="chinese">眼球</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Eye ball will go here -->
+                                    <img src="" alt="眼球 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>yǎn qiú</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">感知光线并形成视觉的器官。</span><span class="english-definition">The organ that perceives light and forms vision.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Glottis</span><span class="chinese">声门</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Glottis will go here -->
+                                    <img src="" alt="声门 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>shēng mén</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">声带之间的开口。</span><span class="english-definition">The opening between the vocal cords.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Hypothalamus</span><span class="chinese">下丘脑</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Hypothalamus will go here -->
+                                    <img src="" alt="下丘脑 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>xià qiū nǎo</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">控制内分泌、体温、食欲等。</span><span class="english-definition">Controls endocrine functions, body temperature, appetite, etc.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Inner ear</span><span class="chinese">内耳</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Inner ear will go here -->
+                                    <img src="" alt="内耳 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>nèi ěr</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">听觉和平衡的感受器官。</span><span class="english-definition">Sensory organ for hearing and balance.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Iris</span><span class="chinese">虹膜</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Iris will go here -->
+                                    <img src="" alt="虹膜 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>hóng mó</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">控制瞳孔大小，调节进光量。</span><span class="english-definition">Controls pupil size and regulates the amount of light entering the eye.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Lacrimal duct</span><span class="chinese">泪管</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Lacrimal duct will go here -->
+                                    <img src="" alt="泪管 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>lèi guǎn</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">输送泪液的管道。</span><span class="english-definition">The duct that transports tears.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Larynx</span><span class="chinese">喉</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Larynx will go here -->
+                                    <img src="" alt="喉 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>hóu</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">发声和呼吸通道。</span><span class="english-definition">The organ of voice and a passageway for air.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Lens</span><span class="chinese">晶状体</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Lens will go here -->
+                                    <img src="" alt="晶状体 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>jīng zhuàng tǐ</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">聚焦光线至视网膜。</span><span class="english-definition">Focuses light onto the retina.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Meninges</span><span class="chinese">脑脊膜</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Meninges will go here -->
+                                    <img src="" alt="脑脊膜 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>nǎo jí mó</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">包裹脑和脊髓的膜层。</span><span class="english-definition">The membranes that enclose the brain and spinal cord.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Middle ear</span><span class="chinese">中耳</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Middle ear will go here -->
+                                    <img src="" alt="中耳 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>zhōng ěr</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">包含听小骨，传导声音。</span><span class="english-definition">Contains ossicles and transmits sound.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Nasal cavity</span><span class="chinese">鼻腔</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Nasal cavity will go here -->
+                                    <img src="" alt="鼻腔 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>bí qiāng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">空气通过鼻进入的通道。</span><span class="english-definition">The passage through which air enters the nose.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Nerve</span><span class="chinese">神经</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Nerve will go here -->
+                                    <img src="" alt="神经 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>shén jīng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">传递信号的细胞纤维。</span><span class="english-definition">Cellular fibers that transmit signals.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Nose</span><span class="chinese">鼻</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Nose will go here -->
+                                    <img src="" alt="鼻 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>bí</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">嗅觉器官，空气入口。</span><span class="english-definition">Organ of smell and air entry point.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Oropharynx</span><span class="chinese">口咽</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Oropharynx will go here -->
+                                    <img src="" alt="口咽 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>kǒu yān</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">食物和空气通道交汇处。</span><span class="english-definition">The intersection of food and air passages.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Outer ear</span><span class="chinese">外耳</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Outer ear will go here -->
+                                    <img src="" alt="外耳 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>wài ěr</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">收集声音并引导至耳道。</span><span class="english-definition">Collects sound and directs it into the ear canal.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Pharyngeal tonsil</span><span class="chinese">咽头</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Pharyngeal tonsil will go here -->
+                                    <img src="" alt="咽头 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>yān tóu</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">上咽部淋巴组织。</span><span class="english-definition">Lymphatic tissue in the upper pharynx.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Pharynx</span><span class="chinese">咽</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Pharynx will go here -->
+                                    <img src="" alt="咽 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>yān</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">食物和空气通道。</span><span class="english-definition">Passageway for food and air.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Pituitary Gland</span><span class="chinese">脑下垂体</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Pituitary Gland will go here -->
+                                    <img src="" alt="脑下垂体 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>nǎo xià chuí tǐ</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">主内分泌腺，调节多种激素。</span><span class="english-definition">The master endocrine gland, regulating various hormones.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Pupil</span><span class="chinese">瞳孔</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Pupil will go here -->
+                                    <img src="" alt="瞳孔 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>tóng kǒng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">光线进入眼球的开口。</span><span class="english-definition">The opening in the eye through which light enters.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Retinal</span><span class="chinese">视网膜</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Retinal will go here -->
+                                    <img src="" alt="视网膜 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>shì wǎng mó</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">感光神经层，形成图像。</span><span class="english-definition">The light-sensitive nerve layer that forms images.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Sclera</span><span class="chinese">巩膜</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Sclera will go here -->
+                                    <img src="" alt="巩膜 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>gǒng mó</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">眼白部分，保护眼球。</span><span class="english-definition">The white outer layer of the eyeball that protects it.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Semicircular canal</span><span class="chinese">三半规管</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Semicircular canal will go here -->
+                                    <img src="" alt="三半规管 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>sān bàn guī guǎn</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">平衡感受器，感知头部运动。</span><span class="english-definition">Balance receptors that sense head movement.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Soft palate</span><span class="chinese">软腭骨</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Soft palate will go here -->
+                                    <img src="" alt="软腭骨 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>ruǎn è gǔ</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">咽部顶部，可关闭鼻咽通道。</span><span class="english-definition">The top part of the pharynx that can close off the nasopharyngeal passage.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Spinal cord</span><span class="chinese">脊髓</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Spinal cord will go here -->
+                                    <img src="" alt="脊髓 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>jí suǐ</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">神经信号主干，连接大脑和身体。</span><span class="english-definition">The main nerve signal pathway connecting the brain and body.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Subglottis</span><span class="chinese">声门下区</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Subglottis will go here -->
+                                    <img src="" alt="声门下区 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>shēng mén xià qū</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">喉下部区域。</span><span class="english-definition">The lower region of the larynx.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Supraglottis</span><span class="chinese">声门上区</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Supraglottis will go here -->
+                                    <img src="" alt="声门上区 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>shēng mén shàng qū</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">喉上部区域。</span><span class="english-definition">The upper region of the larynx.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Throat</span><span class="chinese">喉</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Throat will go here -->
+                                    <img src="" alt="喉 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>hóu</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">空气和食物流通区域。</span><span class="english-definition">Area for air and food passage.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Tongue</span><span class="chinese">舌</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Tongue will go here -->
+                                    <img src="" alt="舌 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>shé</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">品尝、吞咽与发音器官。</span><span class="english-definition">Organ for tasting, swallowing, and speaking.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Tonsil</span><span class="chinese">扁桃体</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Tonsil will go here -->
+                                    <img src="" alt="扁桃体 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>biǎn táo tǐ</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">咽部的免疫组织。</span><span class="english-definition">Immune tissue in the pharynx.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Tympanic membrane</span><span class="chinese">鼓膜</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Tympanic membrane will go here -->
+                                    <img src="" alt="鼓膜 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>gǔ mó</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">接收声波的膜。</span><span class="english-definition">The membrane that receives sound waves.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Uvula</span><span class="chinese">悬雍垂</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Uvula will go here -->
+                                    <img src="" alt="悬雍垂 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>xuán yōng chuí</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">软腭末端垂物，帮助发音。</span><span class="english-definition">The fleshy extension at the back of the soft palate, aiding in speech.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Vocal cord</span><span class="chinese">声带</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Vocal cord will go here -->
+                                    <img src="" alt="声带 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>shēng dài</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">发音的主要结构。</span><span class="english-definition">The main structure for producing sound.</span></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Digestive System Section -->
+        <section id="digestive-system" class="section-card">
+            <h2>🍽️ 消化系统 (Digestive System)</h2>
+            <div class="image-placeholder empty">
+                <!-- Image for the overall system will go here -->
+                <img src="" alt="消化系统示意图" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+            </div>
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>术语 (Term)</th>
+                            <th>拼音 (Pinyin)</th>
+                            <th>定义 (Definition)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Colon</span><span class="chinese">结肠</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Colon will go here -->
+                                    <img src="" alt="结肠 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>jié cháng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">吸收水分，形成粪便的大肠部分。</span><span class="english-definition">The part of the large intestine that absorbs water and forms feces.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Gall bladder</span><span class="chinese">胆囊</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Gall bladder will go here -->
+                                    <img src="" alt="胆囊 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>dǎn náng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">储存和浓缩胆汁。</span><span class="english-definition">Stores and concentrates bile.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Ileum</span><span class="chinese">回肠</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Ileum will go here -->
+                                    <img src="" alt="回肠 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>huí cháng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">小肠末段，吸收养分。</span><span class="english-definition">The last section of the small intestine, which absorbs nutrients.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Omentum</span><span class="chinese">网膜</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Omentum will go here -->
+                                    <img src="" alt="网膜 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>wǎng mó</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">覆盖腹腔器官的脂肪膜。</span><span class="english-definition">A fatty membrane covering the abdominal organs.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Small Intestine</span><span class="chinese">小肠</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Small Intestine will go here -->
+                                    <img src="" alt="小肠 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>xiǎo cháng</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">吸收营养的消化器官。</span><span class="english-definition">The digestive organ that absorbs nutrients.</span></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Teeth Terminology Section -->
+        <section id="teeth-terminology" class="section-card">
+            <h2>🦷 牙齿词汇 (Teeth Terminology)</h2>
+            <div class="image-placeholder empty">
+                <!-- Image for the overall system will go here -->
+                <img src="" alt="牙齿示意图" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+            </div>
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>术语 (Term)</th>
+                            <th>拼音 (Pinyin)</th>
+                            <th>定义 (Definition)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Incisor</span><span class="chinese">门牙</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Incisor will go here -->
+                                    <img src="" alt="门牙 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>mén yá</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">前部的锋利牙齿，用于切割食物。</span><span class="english-definition">Front, sharp teeth used for cutting food.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Canine</span><span class="chinese">犬牙</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Canine will go here -->
+                                    <img src="" alt="犬牙 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>quǎn yá</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">锋利尖牙，用于撕裂食物。</span><span class="english-definition">Sharp, pointed teeth used for tearing food.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Premolar</span><span class="chinese">前臼齿</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Premolar will go here -->
+                                    <img src="" alt="前臼齿 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>qián jiù chǐ</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">位于犬牙和臼齿之间，用于磨碎食物。</span><span class="english-definition">Teeth located between the canines and molars, used for grinding food.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Molar</span><span class="chinese">臼齿</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Molar will go here -->
+                                    <img src="" alt="臼齿 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>jiù chǐ</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">后部的牙齿，用于研磨和咀嚼食物。</span><span class="english-definition">Back teeth used for grinding and chewing food.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Wisdom tooth</span><span class="chinese">智齿</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Wisdom tooth will go here -->
+                                    <img src="" alt="智齿 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>zhì chǐ</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">最后长出的臼齿，通常位于牙弓最末端。</span><span class="english-definition">The last molars to erupt, typically at the very back of the dental arch.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Crown</span><span class="chinese">牙冠</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Crown will go here -->
+                                    <img src="" alt="牙冠 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>yá guān</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">牙齿暴露在口腔内的部分。</span><span class="english-definition">The part of the tooth visible above the gum line.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Root</span><span class="chinese">牙根</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Root will go here -->
+                                    <img src="" alt="牙根 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>yá gēn</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">牙齿嵌入牙槽骨中的部分。</span><span class="english-definition">The part of the tooth embedded in the jawbone.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Enamel</span><span class="chinese">牙釉质</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Enamel will go here -->
+                                    <img src="" alt="牙釉质 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>yá yòu zhì</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">覆盖牙冠的坚硬外层。</span><span class="english-definition">The hard, outermost layer covering the tooth crown.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Dentin</span><span class="chinese">牙本质</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Dentin will go here -->
+                                    <img src="" alt="牙本质 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>yá běn zhì</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">牙齿的主要结构部分，位于牙釉质之下。</span><span class="english-definition">The main structural part of the tooth, located beneath the enamel.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Pulp</span><span class="chinese">牙髓</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Pulp will go here -->
+                                    <img src="" alt="牙髓 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>yá suǐ</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">牙齿中心含神经和血管的软组织。</span><span class="english-definition">The soft tissue in the center of the tooth containing nerves and blood vessels.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Gum</span><span class="chinese">牙龈 / 牙肉</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Gum will go here -->
+                                    <img src="" alt="牙龈 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>yá yín / yá ròu</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">牙齿周围的软组织。</span><span class="english-definition">Soft tissue surrounding the teeth.</span></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Other Section -->
+        <section id="other" class="section-card">
+            <h2>🦴 其他 (Other)</h2>
+            <div class="image-placeholder empty">
+                <!-- Image for the overall system will go here -->
+                <img src="" alt="其他身体部位示意图" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+            </div>
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>术语 (Term)</th>
+                            <th>拼音 (Pinyin)</th>
+                            <th>定义 (Definition)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Bone marrow</span><span class="chinese">骨髓</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Bone marrow will go here -->
+                                    <img src="" alt="骨髓 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>gǔ suǐ</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">产生血细胞的组织，位于骨骼内。</span><span class="english-definition">Tissue inside bones that produces blood cells.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Soft tissue</span><span class="chinese">软体组织</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Soft tissue will go here -->
+                                    <img src="" alt="软体组织 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>ruǎn tǐ zǔ zhī</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">包括肌肉、脂肪、血管等非骨组织。</span><span class="english-definition">Includes non-bony tissues like muscles, fat, and blood vessels.</span></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="stacked-term"><span class="english">Thymus</span><span class="chinese">胸腺</span></div>
+                                <div class="term-image-slot empty>
+                                    <!-- Image for Thymus will go here -->
+                                    <img src="" alt="胸腺 Image" onerror="this.style.display='none'; this.parentNode.classList.add('empty');">
+                                </div>
+                            </td>
+                            <td>xiōng xiàn</td>
+                            <td><div class="stacked-definition"><span class="chinese-definition">儿童免疫系统发育重要器官。</span><span class="english-definition">An important organ for immune system development in children.</span></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="text-center py-8 text-gray-600">
+            <p>&copy; 2025 人体器官词汇表. 版权所有.</p>
+        </footer>
+    </div>
+</body>
+</html>
